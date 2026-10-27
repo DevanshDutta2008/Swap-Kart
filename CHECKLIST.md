@@ -33,7 +33,7 @@ Same stack/flow as ShopKart: Lab1-2 auth, Lab3 products, Lab4 wishlist, Lab5 car
 - [x] Pages done: Wishlist, Offers (accept / decline / counter / withdraw), Orders (confirm handover, cancel), Alerts with unread badge
 - [x] Loading / empty / error / success states on every page
 ### Ship
-- [ ] README (all sections required by the brief)
+- [x] README (all sections required by the brief), DEMO-SCRIPT.md, SUBMISSION.md, client/vercel.json
 - [ ] Deploy (Render/Railway for API, Vercel for client, MongoDB Atlas)
 - [ ] Git repo with real commit history
 - [ ] 3-5 min demo video
