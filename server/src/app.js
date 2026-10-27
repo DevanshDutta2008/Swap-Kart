@@ -1,3 +1,4 @@
+
 import express from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
@@ -15,14 +16,37 @@ import uploadRoutes from './routes/upload.js';
 import { notFound, errorHandler } from './middleware/error.js';
 
 const app = express();
-const uploadsDir = path.resolve(process.cwd(), 'uploads');
-if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
 
-app.use(cors({ origin: process.env.CLIENT_URL || '*' }));
+const uploadsDir = path.resolve(process.cwd(), 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://swap-kart-swye.vercel.app',
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
 app.use('/uploads', express.static(uploadsDir));
 app.use(express.json({ limit: '15mb' }));
-app.use('/api/auth', rateLimit({ windowMs: 15 * 60 * 1000, limit: 50, standardHeaders: true, legacyHeaders: false }));
+
+app.use(
+  '/api/auth',
+  rateLimit({
+    windowMs: 15 * 60 * 1000,
+    limit: 50,
+    standardHeaders: true,
+    legacyHeaders: false,
+  })
+);
+
 app.get('/api/health', (req, res) => res.json({ ok: true }));
+
 app.use('/api/upload', uploadRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/items', itemRoutes);
@@ -32,6 +56,8 @@ app.use('/api/reservations', reservationRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/checkout', checkoutRoutes);
 app.use('/api/orders', orderRoutes);
+
 app.use(notFound);
 app.use(errorHandler);
+
 export default app;
