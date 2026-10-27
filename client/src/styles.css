@@ -27,3 +27,10 @@ input, select { padding:.6rem .7rem; border:1px solid var(--line); border-radius
 .state { text-align:center; padding:3rem 1rem; color:var(--muted); }
 .pager { display:flex; justify-content:center; align-items:center; gap:1rem; margin-top:1.5rem; }
 @media (prefers-reduced-motion: reduce) { * { transition:none !important; animation:none !important; } }
+.detail { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:2rem; margin-top:1.5rem; align-items:start; }
+@media (max-width:760px) { .detail { grid-template-columns:1fr; } }
+.pic.big { aspect-ratio:1/1; } .price.big { font-size:1.8rem; } .detail h1 { margin-top:0; }
+.stack { display:grid; gap:.8rem; margin-top:1rem; } .row { display:flex; gap:.6rem; flex-wrap:wrap; } .row input { flex:1; min-width:140px; }
+.banner { background:color-mix(in srgb, var(--mark) 22%, var(--card)); border-radius:8px; padding:.6rem .8rem; margin:.8rem 0; }
+.ok { color:var(--brand); font-weight:600; } .narrow.wide { max-width:560px; } .two { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; }
+textarea { padding:.6rem .7rem; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); font:inherit; width:100%; }
