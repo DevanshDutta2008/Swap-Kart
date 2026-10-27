@@ -27,9 +27,10 @@ Same stack/flow as ShopKart: Lab1-2 auth, Lab3 products, Lab4 wishlist, Lab5 car
 - [x] Notification routes (list / mark read)
 - [ ] Test everything against a real MongoDB (not possible in my sandbox -- run locally)
 ### Frontend
-- [ ] Vite + React app shell, router, auth context
-- [ ] Pages: Browse, Item detail, Sell, Wishlist, Offers, Reservation/Checkout, Orders, Notifications
-- [ ] Loading / empty / error / success states
+- [x] Vite + React app shell, router, auth context (builds cleanly)
+- [x] Pages done: Login/Register, Browse (search, filters, sort, pages)
+- [ ] Pages left: Item detail (wishlist, offer, reserve), Sell, Wishlist, Offers, Checkout (Razorpay popup), Orders, Notifications bell
+- [ ] Loading / empty / error / success states (done for Login and Browse; repeat for the rest)
 ### Ship
 - [ ] README (all sections required by the brief)
 - [ ] Deploy (Render/Railway for API, Vercel for client, MongoDB Atlas)
