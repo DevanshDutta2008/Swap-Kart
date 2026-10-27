@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
+import path from 'path';
+import fs from 'fs';
 import authRoutes from './routes/auth.js';
 import itemRoutes from './routes/items.js';
 import wishlistRoutes from './routes/wishlist.js';
@@ -9,13 +11,19 @@ import reservationRoutes from './routes/reservations.js';
 import notificationRoutes from './routes/notifications.js';
 import checkoutRoutes from './routes/checkout.js';
 import orderRoutes from './routes/orders.js';
+import uploadRoutes from './routes/upload.js';
 import { notFound, errorHandler } from './middleware/error.js';
 
 const app = express();
+const uploadsDir = path.resolve(process.cwd(), 'uploads');
+if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
+
 app.use(cors({ origin: process.env.CLIENT_URL || '*' }));
-app.use(express.json({ limit: '100kb' }));
+app.use('/uploads', express.static(uploadsDir));
+app.use(express.json({ limit: '15mb' }));
 app.use('/api/auth', rateLimit({ windowMs: 15 * 60 * 1000, limit: 50, standardHeaders: true, legacyHeaders: false }));
 app.get('/api/health', (req, res) => res.json({ ok: true }));
+app.use('/api/upload', uploadRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/items', itemRoutes);
 app.use('/api/wishlist', wishlistRoutes);

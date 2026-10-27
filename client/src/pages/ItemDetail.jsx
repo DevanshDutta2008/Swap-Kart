@@ -35,8 +35,18 @@ export default function ItemDetail() {
 
   return (
     <article className="detail">
-      <div className="pic big">{item.images?.[0] ? <img src={item.images[0]} alt={item.title} /> : <span>{item.category}</span>}</div>
-      <div>
+      <div className="pic big">
+        {item.images?.[0] ? (
+          <img
+            src={item.images[0]}
+            alt={item.title}
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          />
+        ) : (
+          <span>{item.category}</span>
+        )}
+      </div>
+      <div className="info">
         <h1>{item.title}</h1>
         <p className="price big">₹{item.price}</p>
         <p className="meta">{item.condition} · {item.category} · sold by {item.seller.name}{item.seller.hostel ? `, ${item.seller.hostel}` : ''}</p>

@@ -20,6 +20,7 @@ export default function App() {
   useEffect(() => { refresh(); const t = setInterval(refresh, 30000); return () => clearInterval(t); }, [user, loc.pathname]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <>
+      <div className="glow" aria-hidden="true" />
       <header className="top">
         <Link to="/" className="brand">SwapKart</Link>
         <nav>

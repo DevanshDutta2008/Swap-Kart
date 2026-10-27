@@ -17,7 +17,7 @@ const createSchema = z.object({
   description: z.string().trim().max(2000).optional(),
   category: z.enum(CATS), condition: z.enum(CONDS),
   price: z.coerce.number().int().min(1).max(500000),
-  images: z.array(z.string().url()).max(5).optional(),
+  images: z.array(z.string().min(1)).min(1, 'Please upload at least one image of the item').max(5),
 });
 const updateSchema = createSchema.partial().refine(o => Object.keys(o).length > 0, 'Nothing to update');
 const listSchema = z.object({

@@ -43,7 +43,18 @@ export default function Browse() {
               {data.items.map((it) => (
                 <li key={it._id}>
                   <Link to={`/items/${it._id}`} className="card item">
-                    <div className="pic">{it.images?.[0] ? <img src={it.images[0]} alt="" loading="lazy" /> : <span>{it.category}</span>}</div>
+                    <div className="pic">
+                      {it.images?.[0] ? (
+                        <img
+                          src={it.images[0]}
+                          alt={it.title}
+                          loading="lazy"
+                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                        />
+                      ) : (
+                        <span>{it.category}</span>
+                      )}
+                    </div>
                     <h2>{it.title}</h2>
                     <p className="price">₹{it.price}</p>
                     <p className="meta">{it.condition} · {it.seller?.hostel || it.seller?.name}</p>
