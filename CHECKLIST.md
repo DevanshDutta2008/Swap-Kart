@@ -30,8 +30,8 @@ Same stack/flow as ShopKart: Lab1-2 auth, Lab3 products, Lab4 wishlist, Lab5 car
 - [x] Vite + React app shell, router, auth context (builds cleanly)
 - [x] Pages done: Login/Register, Browse (search, filters, sort, pages)
 - [x] Pages done: Item detail (save, offer, reserve, owner can change price / remove), Sell, Checkout (hold countdown + Razorpay popup)
-- [ ] Pages left: Wishlist, Offers (respond to offers / counters), Orders (confirm handover), Notifications bell
-- [ ] Loading / empty / error / success states (done for Login and Browse; repeat for the rest)
+- [x] Pages done: Wishlist, Offers (accept / decline / counter / withdraw), Orders (confirm handover, cancel), Alerts with unread badge
+- [x] Loading / empty / error / success states on every page
 ### Ship
 - [ ] README (all sections required by the brief)
 - [ ] Deploy (Render/Railway for API, Vercel for client, MongoDB Atlas)

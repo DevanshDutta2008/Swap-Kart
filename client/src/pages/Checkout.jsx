@@ -51,7 +51,7 @@ export default function Checkout() {
 
   async function cancel() { await api(`/reservations/${id}`, { method: 'DELETE' }).catch(() => {}); nav(`/items/${id}`); }
 
-  if (paid) return <div className="card narrow"><h1>Payment received</h1><p>Meet the seller, hand over the item, then confirm the handover so the order can close.</p><Link className="btn" to="/">Keep browsing</Link></div>;
+  if (paid) return <div className="card narrow"><h1>Payment received</h1><p>Meet the seller, hand over the item, then confirm the handover so the order can close.</p><Link className="btn" to="/orders">Go to my orders</Link></div>;
   if (error && !item) return <p className="state err" role="alert">{error.message} <Link to={`/items/${id}`}>Back to the item</Link></p>;
   if (!item) return <p className="state">Holding this item for you…</p>;
 

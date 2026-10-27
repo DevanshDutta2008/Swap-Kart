@@ -34,3 +34,8 @@ input, select { padding:.6rem .7rem; border:1px solid var(--line); border-radius
 .banner { background:color-mix(in srgb, var(--mark) 22%, var(--card)); border-radius:8px; padding:.6rem .8rem; margin:.8rem 0; }
 .ok { color:var(--brand); font-weight:600; } .narrow.wide { max-width:560px; } .two { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; }
 textarea { padding:.6rem .7rem; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); font:inherit; width:100%; }
+.list { list-style:none; padding:0; margin:0; display:grid; gap:.8rem; }
+.rowcard { display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; } .rowcard p { margin:0; }
+.right { text-align:right; } .card.unread { border-left:4px solid var(--mark); }
+.badge { background:var(--mark); color:#2b2100; border-radius:999px; padding:0 .45rem; font-size:.75rem; margin-left:.3rem; }
+nav { flex-wrap:wrap; justify-content:flex-end; }
