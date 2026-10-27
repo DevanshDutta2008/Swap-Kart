@@ -9,7 +9,7 @@ Same stack/flow as ShopKart: Lab1-2 auth, Lab3 products, Lab4 wishlist, Lab5 car
 - [x] Pure business logic: reservation hold with expiry (services/reservation.js)
 - [x] Order lifecycle state machine (services/orders.js)
 - [x] Unit tests for all three (node --test)
-- [x] DB-free API tests (validation, login-required, error shapes) -- 13 tests passing
+- [x] DB-free API tests (validation, login-required, error shapes) -- 16 tests passing
 - [x] .env.example, .gitignore
 
 ## Remaining
@@ -17,14 +17,14 @@ Same stack/flow as ShopKart: Lab1-2 auth, Lab3 products, Lab4 wishlist, Lab5 car
 - [x] Mongoose models: User, Item, Offer, Order, Wishlist, Notification
 - [x] Auth routes (register/login, bcrypt, JWT) + auth middleware + role check
 - [x] Item routes (create/edit/delete own, search, filter, sort, pagination)
-- [ ] Wishlist routes (add/remove/list) -- price-drop notification itself is done in items PATCH
-- [ ] Offer routes (make / counter / accept / reject / withdraw)
-- [ ] Reservation routes (reserve, release, auto-expiry sweep)
+- [x] Wishlist routes (add/remove/list) + price-drop alerts
+- [x] Offer routes (make / counter / accept / reject / withdraw)
+- [x] Reservation routes (reserve, release, auto-expiry sweep)
 - [ ] Checkout routes (Razorpay create order, verify signature, webhook-safe/idempotent)
 - [ ] Order routes (buyer/seller views, meetup confirm, cancel)
 - [x] Input validation + central error handler + rate limit
 - [ ] Seed script
-- [ ] Notification routes (list / mark read)
+- [x] Notification routes (list / mark read)
 - [ ] Test everything against a real MongoDB (not possible in my sandbox -- run locally)
 ### Frontend
 - [ ] Vite + React app shell, router, auth context

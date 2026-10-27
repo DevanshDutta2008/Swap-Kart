@@ -3,6 +3,10 @@ import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import authRoutes from './routes/auth.js';
 import itemRoutes from './routes/items.js';
+import wishlistRoutes from './routes/wishlist.js';
+import offerRoutes from './routes/offers.js';
+import reservationRoutes from './routes/reservations.js';
+import notificationRoutes from './routes/notifications.js';
 import { notFound, errorHandler } from './middleware/error.js';
 
 const app = express();
@@ -12,6 +16,10 @@ app.use('/api/auth', rateLimit({ windowMs: 15 * 60 * 1000, limit: 50, standardHe
 app.get('/api/health', (req, res) => res.json({ ok: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/items', itemRoutes);
+app.use('/api/wishlist', wishlistRoutes);
+app.use('/api/offers', offerRoutes);
+app.use('/api/reservations', reservationRoutes);
+app.use('/api/notifications', notificationRoutes);
 app.use(notFound);
 app.use(errorHandler);
 export default app;
