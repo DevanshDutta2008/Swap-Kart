@@ -76,3 +76,6 @@ Never commit `.env`. It is in `.gitignore`.
 ## Notes
 - Built as the end-term project, applying the ShopKart lab series (auth, products, wishlist, cart, checkout and orders) to a different product with its own workflows. It is not a copy of any existing open-source project.
 - Item photos are links to images; there is no file upload.
+
+- ##Link to Demo
+- https://drive.google.com/file/d/1FYUs4pZFNUh85f6QKGBu49WZfWhNftqF/view?usp=sharing
