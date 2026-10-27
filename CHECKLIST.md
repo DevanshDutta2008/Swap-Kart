@@ -9,7 +9,7 @@ Same stack/flow as ShopKart: Lab1-2 auth, Lab3 products, Lab4 wishlist, Lab5 car
 - [x] Pure business logic: reservation hold with expiry (services/reservation.js)
 - [x] Order lifecycle state machine (services/orders.js)
 - [x] Unit tests for all three (node --test)
-- [x] DB-free API tests (validation, login-required, error shapes) -- 16 tests passing
+- [x] DB-free API tests (validation, login-required, error shapes) -- 20 tests passing
 - [x] .env.example, .gitignore
 
 ## Remaining
@@ -20,10 +20,10 @@ Same stack/flow as ShopKart: Lab1-2 auth, Lab3 products, Lab4 wishlist, Lab5 car
 - [x] Wishlist routes (add/remove/list) + price-drop alerts
 - [x] Offer routes (make / counter / accept / reject / withdraw)
 - [x] Reservation routes (reserve, release, auto-expiry sweep)
-- [ ] Checkout routes (Razorpay create order, verify signature, webhook-safe/idempotent)
-- [ ] Order routes (buyer/seller views, meetup confirm, cancel)
+- [x] Checkout routes (Razorpay create order, verify signature, safe to call twice)
+- [x] Order routes (buyer/seller views, meetup confirm, cancel)
 - [x] Input validation + central error handler + rate limit
-- [ ] Seed script
+- [x] Seed script (npm run seed)
 - [x] Notification routes (list / mark read)
 - [ ] Test everything against a real MongoDB (not possible in my sandbox -- run locally)
 ### Frontend
@@ -36,3 +36,14 @@ Same stack/flow as ShopKart: Lab1-2 auth, Lab3 products, Lab4 wishlist, Lab5 car
 - [ ] Git repo with real commit history
 - [ ] 3-5 min demo video
 - [ ] Submission form
+
+## On YOUR side (only you can do these)
+- [ ] Run `npm install` in server/ and client/, copy .env.example to .env, fill MONGO_URI, JWT_SECRET
+- [ ] Create a free MongoDB Atlas cluster and paste its connection string
+- [ ] Get Razorpay TEST keys (dashboard > Test Mode > API keys) into .env
+- [ ] Run the app locally once and click through every flow (my sandbox has no database)
+- [ ] Create the GitHub repo and push (history is already in the zip's .git)
+- [ ] Deploy API (Render/Railway) + client (Vercel), set the same env variables there
+- [ ] Open repo, deployed link and video in an incognito window
+- [ ] Record the 3-5 min demo video
+- [ ] Submit the Google Form before 27 Oct, 11:59 PM IST

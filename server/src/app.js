@@ -7,6 +7,8 @@ import wishlistRoutes from './routes/wishlist.js';
 import offerRoutes from './routes/offers.js';
 import reservationRoutes from './routes/reservations.js';
 import notificationRoutes from './routes/notifications.js';
+import checkoutRoutes from './routes/checkout.js';
+import orderRoutes from './routes/orders.js';
 import { notFound, errorHandler } from './middleware/error.js';
 
 const app = express();
@@ -20,6 +22,8 @@ app.use('/api/wishlist', wishlistRoutes);
 app.use('/api/offers', offerRoutes);
 app.use('/api/reservations', reservationRoutes);
 app.use('/api/notifications', notificationRoutes);
+app.use('/api/checkout', checkoutRoutes);
+app.use('/api/orders', orderRoutes);
 app.use(notFound);
 app.use(errorHandler);
 export default app;
